@@ -240,3 +240,89 @@ body {
     font-size: 36px;
   }
 }
+/* CAROUSEL SECTION */
+
+.carousel-section {
+  padding: 100px 20px;
+}
+
+/* WRAPPER */
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* TRACK */
+
+.carousel-track {
+  display: flex;
+  gap: 25px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+/* CARD */
+
+.carousel-card {
+  width: 320px;
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* IMAGE */
+
+.carousel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* ZOOM EFFECT */
+
+.carousel-card:hover img {
+  transform: scale(1.15);
+}
+
+/* BUTTONS */
+
+.carousel-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: #111;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.1);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+  .carousel-wrapper {
+    flex-direction: column;
+  }
+
+  .carousel-track {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .carousel-card {
+    width: 280px;
+    height: 360px;
+  }
+}

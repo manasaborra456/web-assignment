@@ -47,3 +47,37 @@ window.addEventListener("load", () => {
   document.body.style.opacity = "1";
 
 });
+// CAROUSEL FUNCTIONALITY
+
+const track = document.querySelector(".carousel-track");
+
+const nextBtn = document.querySelector(".next-btn");
+const prevBtn = document.querySelector(".prev-btn");
+
+let scrollAmount = 0;
+
+nextBtn.addEventListener("click", () => {
+
+  scrollAmount += 350;
+
+  track.scrollTo({
+    left: scrollAmount,
+    behavior: "smooth"
+  });
+
+});
+
+prevBtn.addEventListener("click", () => {
+
+  scrollAmount -= 350;
+
+  if (scrollAmount < 0) {
+    scrollAmount = 0;
+  }
+
+  track.scrollTo({
+    left: scrollAmount,
+    behavior: "smooth"
+  });
+
+});
