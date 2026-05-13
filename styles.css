@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 /* RESET */
 
 * {
@@ -122,6 +125,19 @@ body {
     transition: 0.3s ease;
   }
 
+  .hero {
+  padding-top: 120px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+}
+
+.carousel-card {
+  width: 260px;
+  height: 340px;
+}
+
   .nav-links.active {
     opacity: 1;
     visibility: visible;
@@ -136,7 +152,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 120px 20px;
+  padding: 140px 20px 100px;
   text-align: center;
 }
 
@@ -193,6 +209,7 @@ body {
 
 .primary-btn:hover {
   transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(79,70,229,0.3);
 }
 
 .secondary-btn {
@@ -271,6 +288,7 @@ body {
 
 .feature-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
 }
 
 .icon {
@@ -385,4 +403,16 @@ body {
     width: 280px;
     height: 360px;
   }
+}
+/* FADE ANIMATION */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
 }
