@@ -113,3 +113,30 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 
 });
+// FADE UP ANIMATION
+
+const fadeElements =
+  document.querySelectorAll(".fade-up");
+
+const revealOnScroll = () => {
+
+  fadeElements.forEach((element) => {
+
+    const elementTop =
+      element.getBoundingClientRect().top;
+
+    const windowHeight = window.innerHeight;
+
+    if (elementTop < windowHeight - 100) {
+
+      element.classList.add("show");
+
+    }
+
+  });
+
+};
+
+window.addEventListener("scroll", revealOnScroll);
+
+revealOnScroll();
