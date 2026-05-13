@@ -2,19 +2,40 @@
 
 const header = document.querySelector(".header");
 
+const header = document.querySelector(".header");
+
+let lastScroll = 0;
+
 window.addEventListener("scroll", () => {
 
-  if (window.scrollY > 50) {
+  const currentScroll = window.pageYOffset;
 
-    header.style.boxShadow = "0 2px 15px rgba(0,0,0,0.08)";
-    header.style.padding = "18px 0";
+  // SHADOW EFFECT
+
+  if (currentScroll > 50) {
+
+    header.style.boxShadow =
+      "0 2px 15px rgba(0,0,0,0.08)";
 
   } else {
 
     header.style.boxShadow = "none";
-    header.style.padding = "25px 0";
 
   }
+
+  // HIDE / SHOW NAVBAR
+
+  if (currentScroll > lastScroll &&
+      currentScroll > 100) {
+
+    header.style.transform = "translateY(-100%)";
+
+  } else {
+
+    header.style.transform = "translateY(0)";
+  }
+
+  lastScroll = currentScroll;
 
 });
 
@@ -79,5 +100,16 @@ prevBtn.addEventListener("click", () => {
     left: scrollAmount,
     behavior: "smooth"
   });
+
+});
+// MOBILE MENU
+
+const hamburger = document.querySelector(".hamburger");
+
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+
+  navLinks.classList.toggle("active");
 
 });

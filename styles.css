@@ -35,6 +35,8 @@ body {
   left: 0;
   background: white;
   z-index: 1000;
+
+  transition: 0.3s ease;
 }
 
 .header .container {
@@ -68,7 +70,65 @@ body {
 .nav-links a:hover {
   color: #4f46e5;
 }
+/* HAMBURGER */
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #111;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+/* MOBILE MENU */
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    width: 220px;
+
+    flex-direction: column;
+    align-items: center;
+
+    padding: 25px 0;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+
+    transition: 0.3s ease;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+}
 /* HERO */
 
 .hero {
